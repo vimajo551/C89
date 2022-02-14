@@ -23,7 +23,7 @@ function send() {
 	console.log(charAt1);
 
 	lenghtDivide2 = Math.floor(word.length/2);
-	charAt2 = word.charAt(lenghtDivide1);
+	charAt2 = word.charAt(lenghtDivide2);
 	console.log(charAt2);
 
     lenghtMinus1 = word.length - 1; 
