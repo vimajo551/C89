@@ -74,13 +74,13 @@ function check()
 	else 
 	{
 		questionTurn = "player1"
-		document.getElementById("playerQuestion").innerHTML = "Turno de Resposta: " + player1Name ;
+		document.getElementById("playerQuestion").innerHTML = "Turno de Pergunta: " + player1Name ;
 	}
 
 	if(answerTurn == "player1")
 	{
 		answerTurn = "player2"
-		document.getElementById("playerAnswer").innerHTML = "Turno de Pergunta: " + player2Name ;
+		document.getElementById("playerAnswer").innerHTML = "Turno de Resposta: " + player2Name ;
 	}
 	else 
 	{
