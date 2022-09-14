@@ -15,32 +15,17 @@ document.getElementById("playerQuestion").innerHTML = "Turno de Pergunta - " + p
 document.getElementById("playerAnswer").innerHTML = "Turno de Resposta - " + player2Name ;
 
 function send() {
-	getWord = document.getElementById("word").value;
-	word = getWord.toLowerCase();
-	console.log("palavra em caixa baixa = " + word);
+	getnumber1 = document.getElementById("num1").value;
+	getnumber2 = document.getElementById("num2").value;
+	actual_answer = parseInt(getnumber1) *parseInt(getnumber2);
 
-    charAt1 = word.charAt(1);
-	console.log(charAt1);
-
-	lenghtDivide2 = Math.floor(word.length/2);
-	charAt2 = word.charAt(lenghtDivide2);
-	console.log(charAt2);
-
-    lenghtMinus1 = word.length - 1; 
-    charAt3 = word.charAt(lenghtMinus1); 
-	console.log(charAt3);
-
-    removeCharAt1 = word.replace(charAt1, "_");
-    removeCharAt2 = removeCharAt1.replace(charAt2, "_");
-    removeCharAt3 = removeCharAt2.replace(charAt3, "_");
-	console.log(removeCharAt3);
-
-    questionWord = "<h4 id='wordDisplay'> P. "+removeCharAt3+"</h4>";
+    questionnumber = "<h4>"+getnumber1+"X"+getnumber2+"</h4>";
     input_box = "<br>Resposta : <input type='text' id='inputCheckBox'>";
     checkButton = "<br><br><button class='btn btn-info' onclick='check()'>Checar</button>";
-    row =  questionWord + input_box + checkButton ; 
+    row =  questionnumber + input_box + checkButton ; 
     document.getElementById("output").innerHTML = row;
-document.getElementById("word").value = "";
+document.getElementById("getnumber1").value = "";
+document.getElementById("getnumber2").value = "";
 }
 
 
@@ -51,9 +36,7 @@ answerTurn = "player2";
 function check()
 {
 	getAnswer = document.getElementById("inputCheckBox").value;
-	answer = getAnswer.toLowerCase();
-	console.log("resposta em caixa baixa - " + answer);
-	if(answer == word)	
+	if(getAnswer == actual_answer)	
 	{
 		if(answerTurn == "player1")
 		{
@@ -90,4 +73,3 @@ function check()
 
     document.getElementById("output").innerHTML = "";
 }
-
